@@ -1,0 +1,37 @@
+<!-- <div class="app-nav-state">Navigation Bar</div> -->
+
+<div class="topnav" id="full-menu">
+    <a class="menu-item" 
+        [ngClass]="{'active': (activeTab | async) === 'home'}" 
+        (click)="setActive('home')" 
+        routerLink = "/home">Home</a>
+    
+    <a class="menu-item" 
+        [ngClass]="{'active': (activeTab | async) === 'browseMarketplace'}" 
+        (click)="setActive('browseMarketplace')" 
+        routerLink="/browseMarketplace">Marketplace</a>
+    
+    <a class="menu-item"  
+        [ngClass]="{'active': (activeTab | async) === 'planTrip'}" 
+        (click)="setActive('planTrip')" 
+        routerLink="/planTrip">Plan a Trip</a>
+
+    <a class="menu-item"  
+        [ngClass]="{'active': (activeTab | async) === 'viewTrips'}" 
+        (click)="setActive('viewTrips')" 
+        routerLink="/viewTrips">View My Trips</a>
+
+    <a class="menu-item"  
+        [ngClass]="{'active': (activeTab | async) === 'viewProfile'}" 
+        (click)="setActive('viewProfile')" 
+        routerLink="/viewProfile">View Profile</a>
+
+    <a class="login"  
+        [ngClass]="{'active': (activeTab | async) === 'login'}" 
+        (click)="setActive('login')" 
+        routerLink="/login">Login/Logout</a>
+</div>
+
+<!-- <div class="topnav" id="mobile-menu">
+    <a href="#" class="mobile-menu">Menu</a>
+</div> -->

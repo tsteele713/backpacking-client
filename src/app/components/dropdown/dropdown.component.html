@@ -1,0 +1,10 @@
+<div class="btn-group" dropdown #dropdown="bs-dropdown">
+    <button id="button-basic" dropdownToggle type="button" 
+       class="btn btn-primary dropdown-toggle selection-list"
+       aria-controls="dropdown-basic">
+       {{ displayLabel | async }} <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+       <li *ngFor="let option of selectList" role="menuitem"><a tabindex="0" class="dropdown-item" (click)="setSelection(option)">{{ option }}</a></li>
+    </ul>
+  </div>
