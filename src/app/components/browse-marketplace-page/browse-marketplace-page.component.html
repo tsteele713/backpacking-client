@@ -12,11 +12,19 @@
 
 </div>
 
-<div>
-  <ts-dropdown [label]="'Select a Park'" [selectList]="parkList"></ts-dropdown>
+<div class="search-selections">
+  <!-- <ts-dropdown [label]="'Select a Park'" [selectList]="parkList"></ts-dropdown> -->
 
-  <ts-dropdown [label]="'Select park area'" [selectList]="parkList"></ts-dropdown>
+  <select class="form-select" [(ngModel)]="selectedPark" (change)="setPark()">
+    <option value="Default">Please select a park</option>
+    <option *ngFor="let park of parkList" [value]="park">{{ park }}</option>
+  </select>
 
-  <button class="btn btn-secondary">Submit</button>
+  <select class="form-select" [(ngModel)]="selectedArea" (change)="setArea()">
+    <option  value="Default">Please select an area</option>
+    <option *ngFor="let park of parkList">{{ park }}</option>
+  </select>
+
+  <button class="btn btn-secondary search-park-location" [disabled]="searchParkDisabled | async">Submit</button>
 
 </div>

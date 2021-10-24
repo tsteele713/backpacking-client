@@ -15,6 +15,13 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { BsDropdownModule,BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { FormsModule } from '@angular/forms';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { ForgotPasswordPageComponent } from './components/forgot-password-page/forgot-password-page.component';
+import { ForgotPasswordSuccessPageComponent } from './components/forgot-password-success-page/forgot-password-success-page.component';
+import { ProfilePictureComponent } from './components/view-profile-page/profile-picture/profile-picture.component';
+import { UserProfileService } from './services/user-profile.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,16 +35,23 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     TripPlanningPageComponent,
     ViewProfilePageComponent,
     LoginPageComponent,
-    DropdownComponent
+    DropdownComponent,
+    RegistrationPageComponent,
+    ForgotPasswordPageComponent,
+    ForgotPasswordSuccessPageComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    BsDropdownConfig
+    BsDropdownConfig,
+    UserProfileService
   ],
   bootstrap: [
     AppComponent,

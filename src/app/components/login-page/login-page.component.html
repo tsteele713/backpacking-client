@@ -1,1 +1,13 @@
-Login Page
+<div class="login-form">
+
+    <p>Don't have an account? <a routerLink="/registration" class="register-account">Register here.</a></p>
+
+    <input type="text" class="form-control email" placeholder="Email Address"/>
+    <input type="password" class="form-control password" placeholder="Password"/>
+    <span class="bi bi-eye-slash" id="togglePassword"></span>
+
+    <button class="btn button-default" (click)="login()">Login</button>
+
+    <a routerLink="/forgotPassword" class="forgot-password">Forgot my password</a>
+
+</div>
