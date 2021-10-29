@@ -1,0 +1,17 @@
+<p>When are you starting your trip?</p>
+
+<div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+       <input type="text" 
+         autocomplete="off"
+          placeholder="Enter Date"
+          class="form-control"
+          id="txtDate"
+          bsDatepicker
+          [(ngModel)]="startDate"
+          (ngModelChange)="emitChange()"
+          [minDate]="minDate"
+          [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD', showWeekNumbers:false }">
+
+    </div>
+ </div>

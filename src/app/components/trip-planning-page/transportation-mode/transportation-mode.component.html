@@ -1,0 +1,14 @@
+<p>How are you planning on getting there?</p>
+            
+<div class="plane-selection" (click)="selectTravelOption('Flying')" [ngClass]="{'selected' : (transportationType | async) === 'Flying'}">
+   <img width="100" height="100" src = "assets/images/airplane.svg" altText="Select flying for mode of transportation"/>
+             <p>Flying</p>
+         
+     
+</div>
+ <div class="car-selection" (click)="selectTravelOption('Driving')" [ngClass]="{'selected' : (transportationType | async) === 'Driving'}">
+             
+             <img width="100" height="100" src = "assets/images/car.svg" altText="Select car for mode of transportation"/>
+             <p>Driving</p>
+         
+     </div>

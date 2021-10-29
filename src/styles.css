@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
 
 body {
     padding: 0;
@@ -9,3 +10,26 @@ body {
     font-family: Arial;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bs-datepicker-body table td.week span 
+{
+  color: #333 !important; 
+}
+
+.bs-datepicker-body table td span.selected,
+.bs-datepicker-head,
+.bs-datepicker-head, .bs-datepicker button:active,
+.bs-datepicker-body table td.selected span,
+.bs-datepicker-body table td span[class*="select-"]:after,
+.bs-datepicker-body table td[class*="select-"] span:after,
+.bs-datepicker-body table td.active-week span:hover 
+{
+  background-color: #333 !important; 
+}
+
+.modal-content {
+    min-height: 364px;
+}

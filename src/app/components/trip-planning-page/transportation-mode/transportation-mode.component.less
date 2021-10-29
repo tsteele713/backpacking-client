@@ -1,0 +1,39 @@
+a {
+    width: 125px;
+    color: #333;
+    text-decoration: none;
+
+
+}
+
+.plane-selection,
+.car-selection {
+    display:inline;
+    border: solid 1px black;
+    width: 10em;
+    text-align: center;
+    border-radius:15px;
+    &:focus,
+    &:hover {
+            -moz-box-shadow: 0 0 3px #76B5F6;
+            -webkit-box-shadow: 0 0 3px #76B5F6;
+            box-shadow: 0 0 18px #76B5F6;
+            cursor: pointer;
+        }
+}
+
+.plane-selection {
+    float:left;
+    margin-left:30px;
+}
+
+.car-selection {
+    float: right;
+    margin-right:30px;
+}
+
+.selected {
+    -moz-box-shadow: 0 0 3px #76B5F6;
+    -webkit-box-shadow: 0 0 3px #76B5F6;
+    box-shadow: 0 0 18px #76B5F6;
+}

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'ts-trip-planning-page',
@@ -6,5 +9,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./trip-planning-page.component.less']
 })
 export class TripPlanningPageComponent {
-  
 }

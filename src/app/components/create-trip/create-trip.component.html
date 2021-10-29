@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Plan Trip</button>
+<ng-template #template>
+    <div class="modal-header">
+       <h4 class="modal-title pull-left">Lets Get Started</h4>
+       <button type="button" class="btn close pull-right x-button" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">×</span>
+       </button>
+    </div>
+    <div class="modal-body">
+            <ts-trip-dates  (selectedDate)="setDate($event)" *ngIf="(activeState | async) === 'startDate'"></ts-trip-dates>
+            <ts-destination (selectedPark)="setPark($event)" *ngIf="(activeState | async) === 'destination'"></ts-destination>
+            <ts-transportation-mode (selectedTransportation)="setTransportation($event)" *ngIf="(activeState | async) === 'transportation'"></ts-transportation-mode>
+            
+    </div>
+    <div class="modal-footer">
+        <button *ngIf="(activeState | async) !== 'startDate'" type="button" class="btn btn-secondary cancel" (click)="reverseState()">Back</button>
+        <button type="button" class="btn btn-primary next" *ngIf="(activeState | async) !== 'transportation'" (click)="switchState()">Next</button>
+        <button type="button" class="btn btn-primary next" *ngIf="(activeState | async) === 'transportation'" (click)="createTrip()">Submit</button>
+
+    </div>
+ </ng-template>

@@ -1,0 +1,12 @@
+<p>Where is the first stop on your trip?</p>
+
+
+<select class="form-select states" (change)="emitState()">
+    <option value="Default">State</option>
+    <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+</select>
+
+<select class="form-select parks" (change)="emitPark()" [(ngModel)]="parkValue" >
+    <option value="Default">Park</option>
+    <option *ngFor="let park of parks" [value]="park">{{ park }}</option>
+</select>

@@ -1,0 +1,34 @@
+.x-button {
+    border: none;
+    background-color: white;
+}
+
+
+button {
+    &:hover,
+    &:focus {
+        background-color: #ddd;
+        color: #333;
+    }
+    border: none;
+}
+
+.next {
+    background-color: #04AA6D;
+}
+
+.cancel {
+    background-color: #E1E0E0;
+    border: none;
+    color: #333;
+
+    &:hover,
+    &:focus {
+        background-color: #919191;
+        color:white;
+    }
+}
+
+.modal-content::ng-deep {
+    min-height: 364px;
+}

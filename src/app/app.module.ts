@@ -22,6 +22,13 @@ import { ForgotPasswordSuccessPageComponent } from './components/forgot-password
 import { ProfilePictureComponent } from './components/view-profile-page/profile-picture/profile-picture.component';
 import { UserProfileService } from './services/user-profile.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
+import { TransportationModeComponent } from './components/trip-planning-page/transportation-mode/transportation-mode.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TripDatesComponent } from './components/trip-planning-page/trip-dates/trip-dates.component';
+import { DestinationComponent } from './components/trip-planning-page/destination/destination.component';
+import { CreateTripComponent } from './components/create-trip/create-trip.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,11 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationPageComponent,
     ForgotPasswordPageComponent,
     ForgotPasswordSuccessPageComponent,
-    ProfilePictureComponent
+    ProfilePictureComponent,
+    TransportationModeComponent,
+    TripDatesComponent,
+    DestinationComponent,
+    CreateTripComponent
   ],
   imports: [
     BrowserModule,
@@ -47,11 +58,16 @@ import { HttpClientModule } from '@angular/common/http';
     BsDropdownModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxBootstrapIconsModule.pick(allIcons),
+    ModalModule,
+    BsDatepickerModule.forRoot()
+    
   ],
   providers: [
     BsDropdownConfig,
-    UserProfileService
+    UserProfileService,
+    BsModalService
   ],
   bootstrap: [
     AppComponent,
