@@ -29,6 +29,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TripDatesComponent } from './components/trip-planning-page/trip-dates/trip-dates.component';
 import { DestinationComponent } from './components/trip-planning-page/destination/destination.component';
 import { CreateTripComponent } from './components/create-trip/create-trip.component';
+import { FutureTripsComponent } from './components/view-trips-page/future-trips/future-trips.component';
+import { PastTripsComponent } from './components/view-trips-page/past-trips/past-trips.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { CreateTripComponent } from './components/create-trip/create-trip.compon
     TransportationModeComponent,
     TripDatesComponent,
     DestinationComponent,
-    CreateTripComponent
+    CreateTripComponent,
+    FutureTripsComponent,
+    PastTripsComponent
   ],
   imports: [
     BrowserModule,
