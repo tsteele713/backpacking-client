@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'ts-view-trips-page',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ViewTripsPageComponent {
   
+  activeTab: BehaviorSubject<string> = new BehaviorSubject<string>('Upcoming Trips');
+
+  setActiveTab(tab: string) {
+    this.activeTab.next(tab);
+  }
 }
