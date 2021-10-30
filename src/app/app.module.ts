@@ -26,6 +26,7 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { ProfilePictureComponent } from './components/view-profile-page/profile-picture/profile-picture.component';
 import { ViewProfilePageComponent } from './components/view-profile-page/view-profile-page.component';
+import { EndTripComponent } from './components/view-trip-details-page/end-trip/end-trip.component';
 import { TripChecklistComponent } from './components/view-trip-details-page/trip-checklist/trip-checklist.component';
 import { TripExpensesComponent } from './components/view-trip-details-page/trip-expenses/trip-expenses.component';
 import { TripFriendsComponent } from './components/view-trip-details-page/trip-friends/trip-friends.component';
@@ -36,6 +37,7 @@ import { FutureTripsComponent } from './components/view-trips-page/future-trips/
 import { PastTripsComponent } from './components/view-trips-page/past-trips/past-trips.component';
 import { TripPreviewComponent } from './components/view-trips-page/trip-preview/trip-preview.component';
 import { ViewTripsPageComponent } from './components/view-trips-page/view-trips-page.component';
+import { ChecklistService } from './services/checklist.service';
 import { TripService } from './services/trip.service';
 import { UserProfileService } from './services/user-profile.service';
 
@@ -69,7 +71,8 @@ import { UserProfileService } from './services/user-profile.service';
     TripFriendsComponent,
     TripExpensesComponent,
     TripItineraryComponent,
-    TripChecklistComponent
+    TripChecklistComponent,
+    EndTripComponent
 
   ],
   imports: [
@@ -88,7 +91,8 @@ import { UserProfileService } from './services/user-profile.service';
     BsDropdownConfig,
     UserProfileService,
     BsModalService,
-    TripService
+    TripService,
+    ChecklistService
   ],
   bootstrap: [
     AppComponent,

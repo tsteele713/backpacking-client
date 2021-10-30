@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ChecklistItem } from 'src/app/models/checklist-item.model';
+import { Trip } from 'src/app/models/trip.model';
+import { ChecklistService } from 'src/app/services/checklist.service';
 import { UserProfileService } from 'src/app/services/user-profile.service';
 
 @Component({
@@ -8,9 +11,12 @@ import { UserProfileService } from 'src/app/services/user-profile.service';
 })
 export class TripChecklistComponent implements OnInit {
   
-    checklistItems: any[] = [];
+    checklistItems: ChecklistItem[] = [];
+    @Input() trip!: Trip;
+
+    constructor(private checklistService: ChecklistService){}
 
     ngOnInit() {
-
+        this.checklistItems = this.checklistService.retrieveChecklistForTrip('12345');
     }
 }

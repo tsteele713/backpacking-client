@@ -1,5 +1,5 @@
 <div class="overview-container">
-    <h4> {{ trip.name }}</h4>
+    <h4> {{ trip.name }} </h4>
     <hr class="solid">
 
     <div class="overview-details">
@@ -11,7 +11,7 @@
 
         <p class="airport" *ngIf="trip.initialTransportationType === 'Flying'">Destination airport: {{ trip.destinationAirport }}</p>
     </div>
-
+    <ts-end-trip *ngIf="trip.returnDate === undefined"></ts-end-trip>
     <div class="description">
         <h5>Description:</h5>
         {{ trip.description }}
