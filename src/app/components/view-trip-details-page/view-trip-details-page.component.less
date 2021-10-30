@@ -6,7 +6,7 @@
     padding:25px;
 }
 
-.top-page {
+.overview-content {
     display: flex;
 }
 
@@ -17,7 +17,9 @@
     border-radius: 15px;
 }
 
-.bottom-page {
+.checklist,
+.itinerary,
+.expenses {
     margin:25px;
     border: 1px solid lightgray;
     border-radius: 15px;
@@ -26,4 +28,35 @@
 
 .page-container {
     padding-bottom: 50px;
+}
+
+.active {
+    background-color: #04AA6D !important;
+    color: white !important;
+}
+
+.nav-link {
+    cursor: pointer;
+    border-radius: 0;
+    background-color: lightgray;
+    color:rgb(116, 116, 116);
+    border: solid 1px darkgray;
+    &:hover,
+    &:focus {
+        background-color: gray !important;
+        color: white !important;
+    }
+}
+
+.first {
+    border-radius: 10px 0 0 10px;
+}
+
+.last {
+    border-radius: 0 10px 10px 0;
+}
+
+.detail-pills {
+    margin: auto;
+    width: 475px;
 }

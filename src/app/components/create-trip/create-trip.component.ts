@@ -32,7 +32,7 @@ export class CreateTripComponent implements OnInit {
   
     ngOnInit() {
       
-      this.activeState = new BehaviorSubject<string>('startDate');
+      this.activeState = new BehaviorSubject<string>('name');
       this.displayTransportation = new BehaviorSubject<boolean>(false);
       this.minDate.setDate(this.minDate.getDate() - 1);
       this.selectedPark = new BehaviorSubject<string>('');
