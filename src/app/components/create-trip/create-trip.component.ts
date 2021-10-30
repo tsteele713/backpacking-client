@@ -18,6 +18,7 @@ export class CreateTripComponent implements OnInit {
     selectedPark!:BehaviorSubject<string>;
     selectedTransportation!:BehaviorSubject<string>;
     selectedDate!:BehaviorSubject<string>;
+    selectedName!:BehaviorSubject<string>;
     modalOptions: ModalOptions = {
       backdrop : 'static',
       keyboard : false
@@ -37,6 +38,7 @@ export class CreateTripComponent implements OnInit {
       this.selectedPark = new BehaviorSubject<string>('');
       this.selectedTransportation = new BehaviorSubject<string>('');
       this.selectedDate = new BehaviorSubject<string>('');
+      this.selectedName = new BehaviorSubject<string>('');
     }
   
     openModal(template: TemplateRef<any>) {
@@ -46,13 +48,15 @@ export class CreateTripComponent implements OnInit {
   
     close() {
       this.modalRef.hide();
-      this.activeState.next('startDate');
+      this.activeState.next('name');
       this.selectedPark.next('');
       this.selectedTransportation.next('');
     }
   
     switchState() {
-      if (this.activeState.getValue() === 'startDate') {
+      if (this.activeState.getValue() === 'name') {
+        this.activeState.next('startDate');
+      } else if (this.activeState.getValue() === 'startDate') {
         this.activeState.next('destination');
       } else if (this.activeState.getValue() === 'destination'){
         this.activeState.next('transportation');
@@ -70,6 +74,8 @@ export class CreateTripComponent implements OnInit {
         this.activeState.next('destination');
       } else if (this.activeState.getValue() === 'destination'){
         this.activeState.next('startDate');
+      }else if (this.activeState.getValue() === 'startDate'){
+        this.activeState.next('name');
       }
     }
   
@@ -82,5 +88,9 @@ export class CreateTripComponent implements OnInit {
     }
     setDate(newDate: string) {
       this.selectedDate.next(newDate);
+    }
+
+    setSelectedName(selectedName: string) {
+      this.selectedName.next(selectedName);
     }
 }

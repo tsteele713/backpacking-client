@@ -1,36 +1,42 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { AppRoutingModule } from './app-routing.module'; 
-import { CreateListingPageComponent } from './components/create-listing-page/create-listing-page.component';
-import { BrowseMarketplacePageComponent } from './components/browse-marketplace-page/browse-marketplace-page.component';
-import { ViewTripsPageComponent } from './components/view-trips-page/view-trips-page.component';
-import { TripPlanningPageComponent } from './components/trip-planning-page/trip-planning-page.component';
-import { ViewProfilePageComponent } from './components/view-profile-page/view-profile-page.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { BsDropdownModule,BsDropdownConfig } from 'ngx-bootstrap/dropdown';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { FormsModule } from '@angular/forms';
-import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowseMarketplacePageComponent } from './components/browse-marketplace-page/browse-marketplace-page.component';
+import { CreateListingPageComponent } from './components/create-listing-page/create-listing-page.component';
+import { CreateTripComponent } from './components/create-trip/create-trip.component';
+import { DestinationComponent } from './components/create-trip/destination/destination.component';
+import { NameTripComponent } from './components/create-trip/name-trip/name-trip.component';
+import { TransportationModeComponent } from './components/create-trip/transportation-mode/transportation-mode.component';
+import { TripDatesComponent } from './components/create-trip/trip-dates/trip-dates.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ForgotPasswordPageComponent } from './components/forgot-password-page/forgot-password-page.component';
 import { ForgotPasswordSuccessPageComponent } from './components/forgot-password-success-page/forgot-password-success-page.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { ProfilePictureComponent } from './components/view-profile-page/profile-picture/profile-picture.component';
-import { UserProfileService } from './services/user-profile.service';
-import { HttpClientModule } from '@angular/common/http';
-import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
-import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
-import { TransportationModeComponent } from './components/trip-planning-page/transportation-mode/transportation-mode.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { TripDatesComponent } from './components/trip-planning-page/trip-dates/trip-dates.component';
-import { DestinationComponent } from './components/trip-planning-page/destination/destination.component';
-import { CreateTripComponent } from './components/create-trip/create-trip.component';
+import { ViewProfilePageComponent } from './components/view-profile-page/view-profile-page.component';
+import { TripExpensesComponent } from './components/view-trip-details-page/trip-expenses/trip-expenses.component';
+import { TripFriendsComponent } from './components/view-trip-details-page/trip-friends/trip-friends.component';
+import { TripOverviewComponent } from './components/view-trip-details-page/trip-overview/trip-overview.component';
+import { ViewTripDetailsPageComponent } from './components/view-trip-details-page/view-trip-details-page.component';
 import { FutureTripsComponent } from './components/view-trips-page/future-trips/future-trips.component';
 import { PastTripsComponent } from './components/view-trips-page/past-trips/past-trips.component';
+import { TripPreviewComponent } from './components/view-trips-page/trip-preview/trip-preview.component';
+import { ViewTripsPageComponent } from './components/view-trips-page/view-trips-page.component';
+import { TripService } from './services/trip.service';
+import { UserProfileService } from './services/user-profile.service';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +47,6 @@ import { PastTripsComponent } from './components/view-trips-page/past-trips/past
     CreateListingPageComponent,
     BrowseMarketplacePageComponent,
     ViewTripsPageComponent,
-    TripPlanningPageComponent,
     ViewProfilePageComponent,
     LoginPageComponent,
     DropdownComponent,
@@ -54,7 +59,14 @@ import { PastTripsComponent } from './components/view-trips-page/past-trips/past
     DestinationComponent,
     CreateTripComponent,
     FutureTripsComponent,
-    PastTripsComponent
+    PastTripsComponent,
+    NameTripComponent,
+    TripPreviewComponent,
+    ViewTripDetailsPageComponent,
+    TripOverviewComponent,
+    TripFriendsComponent,
+    TripExpensesComponent
+
   ],
   imports: [
     BrowserModule,
@@ -71,7 +83,8 @@ import { PastTripsComponent } from './components/view-trips-page/past-trips/past
   providers: [
     BsDropdownConfig,
     UserProfileService,
-    BsModalService
+    BsModalService,
+    TripService
   ],
   bootstrap: [
     AppComponent,

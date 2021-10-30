@@ -1,0 +1,18 @@
+<div class="expenses-container">
+    <h4>Trip Expenses <a href=""><img class="add-expense" width="30" height="30" alt-test="Add Expense" src="assets/images/plus-sign.svg"/></a></h4>
+    <hr class="solid">
+
+    <div  *ngIf="expenses == undefined || expenses.length === 0" class="no-expenses">
+        <p>No expenses yet</p>
+    </div>
+
+    <hr class="solid">
+
+    <div class="expenses-summary">
+        <div class="total-expenses">
+            <p>Total Personal Expenses: </p>
+            <p>Total Group Expenses: </p>
+        </div>
+    </div>
+
+</div>

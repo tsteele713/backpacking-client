@@ -1,12 +1,16 @@
 <div class="previous-header">
     <h4>Previous Trips</h4>
 </div>
-<div class="trip-container">
-
-
-   <ul>
-        <li></li>
-   </ul>
-
-
+<div class="trip-container container">
+    <div class="row" *ngFor="let tripChunk of trips; let i = index">
+        <div class="col-sm preview" *ngFor="let trip of tripChunk; let y = index">
+            <ts-trip-preview *ngIf="trip !== undefined" [trip]="trip"></ts-trip-preview>
+        </div>
+        <div class="col-sm" *ngIf="tripChunk.length < 2">
+            
+        </div>
+        <div class="col-sm" *ngIf="tripChunk.length < 3">
+            
+        </div>
+    </div>
 </div>

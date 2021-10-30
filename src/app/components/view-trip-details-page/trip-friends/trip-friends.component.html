@@ -1,0 +1,21 @@
+<div class="friend-container"> 
+    <h4>Invite friends</h4>
+    <hr class="solid">
+
+    <p class="friend-description">Invite friends that you are traveling with, this will allow you all to 
+        keep track of expenses and more effectively coordinate your trip. </p>
+
+
+        <input type="text" class="form-control" placeholder="Enter friend's name..."/>
+
+
+
+        <div class="friend-list">
+            <div class="friend-pill" *ngFor="let friend of friendList"> 
+                <div class="friend">&nbsp;&nbsp;&nbsp;{{ friend.firstName + ' ' + friend.lastName}}&nbsp;&nbsp;&nbsp;
+                    <a class="remove-invite" (click)="removeInvite()">x</a>&nbsp;&nbsp;
+                </div>
+            </div>
+
+        </div>
+</div>

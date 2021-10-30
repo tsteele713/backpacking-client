@@ -1,0 +1,19 @@
+<div class="overview-container">
+    <h4> {{ trip.name }}</h4>
+    <hr class="solid">
+
+    <div class="overview-details">
+        <div class="date-container">
+            <p class="start-date">Departure Date: {{ trip.departureDate }}</p>
+            <p *ngIf="trip.returnDate !== undefined" class="return-date"><span [innerText]="returnDate"></span></p>
+        </div>
+        <img width="30" [ngClass]="{ 'pad-image' : trip.initialTransportationType === 'Driving' }" height="30" [src]="image" altText="Select car for mode of transportation"/>
+
+        <p class="airport" *ngIf="trip.initialTransportationType === 'Flying'">Destination airport: {{ trip.destinationAirport }}</p>
+    </div>
+
+    <div class="description">
+        <h5>Description:</h5>
+        {{ trip.description }}
+    </div>
+</div>

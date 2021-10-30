@@ -7,8 +7,8 @@ import { ForgotPasswordSuccessPageComponent } from './components/forgot-password
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
-import { TripPlanningPageComponent } from './components/trip-planning-page/trip-planning-page.component';
 import { ViewProfilePageComponent } from './components/view-profile-page/view-profile-page.component';
+import { ViewTripDetailsPageComponent } from './components/view-trip-details-page/view-trip-details-page.component';
 import { ViewTripsPageComponent } from './components/view-trips-page/view-trips-page.component';
 
 const routes: Routes = [
@@ -16,13 +16,13 @@ const routes: Routes = [
    {path:'createListing', component:CreateListingPageComponent},
    {path:'', component:HomePageComponent},
    {path:'browseMarketplace', component:BrowseMarketplacePageComponent},
-   {path:'planTrip', component:TripPlanningPageComponent},
    {path:'viewTrips', component:ViewTripsPageComponent},
    {path:'viewProfile', component:ViewProfilePageComponent},
    {path:'login', component:LoginPageComponent},
    {path:'registration', component:RegistrationPageComponent},
    {path:'forgotPassword', component:ForgotPasswordPageComponent},
-   {path:'resetPasswordSuccess', component:ForgotPasswordSuccessPageComponent}
+   {path:'resetPasswordSuccess', component:ForgotPasswordSuccessPageComponent},
+   {path:'viewTripDetail/:seqId', component:ViewTripDetailsPageComponent}
 ];
 @NgModule({ 
    imports: [

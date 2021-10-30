@@ -21,7 +21,7 @@ export class DestinationComponent implements OnInit {
     }
 
     emitState() {
-        alert(456);
+        
     }
     emitPark() {
         this.selectedPark.emit(this.parkValue);

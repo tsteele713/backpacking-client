@@ -7,13 +7,14 @@
        </button>
     </div>
     <div class="modal-body">
+            <ts-name-trip  (selectedName)="setSelectedName($event)" *ngIf="(activeState | async) === 'name'"></ts-name-trip>
             <ts-trip-dates  (selectedDate)="setDate($event)" *ngIf="(activeState | async) === 'startDate'"></ts-trip-dates>
             <ts-destination (selectedPark)="setPark($event)" *ngIf="(activeState | async) === 'destination'"></ts-destination>
             <ts-transportation-mode (selectedTransportation)="setTransportation($event)" *ngIf="(activeState | async) === 'transportation'"></ts-transportation-mode>
             
     </div>
     <div class="modal-footer">
-        <button *ngIf="(activeState | async) !== 'startDate'" type="button" class="btn btn-secondary cancel" (click)="reverseState()">Back</button>
+        <button *ngIf="(activeState | async) !== 'name'" type="button" class="btn btn-secondary cancel" (click)="reverseState()">Back</button>
         <button type="button" class="btn btn-primary next" *ngIf="(activeState | async) !== 'transportation'" (click)="switchState()">Next</button>
         <button type="button" class="btn btn-primary next" *ngIf="(activeState | async) === 'transportation'" (click)="createTrip()">Submit</button>
 

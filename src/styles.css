@@ -16,7 +16,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .bs-datepicker-body table td.week span 
 {
-  color: #333 !important; 
+  color: #04AA6D !important; 
 }
 
 .bs-datepicker-body table td span.selected,
@@ -27,7 +27,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .bs-datepicker-body table td[class*="select-"] span:after,
 .bs-datepicker-body table td.active-week span:hover 
 {
-  background-color: #333 !important; 
+  background-color: #04AA6D !important; 
 }
 
 .modal-content {

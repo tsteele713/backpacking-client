@@ -12,11 +12,6 @@
         routerLink="/browseMarketplace">Marketplace</a>
     
     <a class="menu-item"  
-        [ngClass]="{'active': (activeTab | async) === 'planTrip'}" 
-        (click)="setActive('planTrip')" 
-        routerLink="/planTrip">Plan a Trip</a>
-
-    <a class="menu-item"  
         [ngClass]="{'active': (activeTab | async) === 'viewTrips'}" 
         (click)="setActive('viewTrips')" 
         routerLink="/viewTrips">View My Trips</a>
@@ -24,7 +19,7 @@
     <a class="menu-item"  
         [ngClass]="{'active': (activeTab | async) === 'viewProfile'}" 
         (click)="setActive('viewProfile')" 
-        routerLink="/viewProfile">View Profile</a>
+        routerLink="/viewProfile">Profile</a>
 
     <a class="login"  
         [ngClass]="{'active': (activeTab | async) === 'login'}" 
