@@ -2,6 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
 
+
 body {
     padding: 0;
     margin: 0;

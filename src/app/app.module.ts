@@ -38,6 +38,7 @@ import { PastTripsComponent } from './components/view-trips-page/past-trips/past
 import { TripPreviewComponent } from './components/view-trips-page/trip-preview/trip-preview.component';
 import { ViewTripsPageComponent } from './components/view-trips-page/view-trips-page.component';
 import { ChecklistService } from './services/checklist.service';
+import { ExpensesService } from './services/expenses.service';
 import { TripService } from './services/trip.service';
 import { UserProfileService } from './services/user-profile.service';
 
@@ -92,7 +93,8 @@ import { UserProfileService } from './services/user-profile.service';
     UserProfileService,
     BsModalService,
     TripService,
-    ChecklistService
+    ChecklistService,
+    ExpensesService
   ],
   bootstrap: [
     AppComponent,

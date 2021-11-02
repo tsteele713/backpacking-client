@@ -9,4 +9,34 @@
    .no-items {
        font-style: italic;
        color: darkgray;
-   }
+   
+    }
+
+    input[type=checkbox] {
+        display: none;
+      }
+      .label {
+        // border: 1px solid #000;
+        border-radius: 30px;
+        background-color: rgb(165, 4, 4);
+        color: rgb(165, 4, 4);
+        padding: 3px;
+        cursor: pointer;
+
+        /* background: url("unchecked.png") no-repeat left center; */ 
+        /* padding-left: 15px; */
+      }
+      input[type=checkbox]:checked + .label {
+        background: #04AA6D;
+        color: #04AA6D;
+        /* background-image: url("checked.png"); */
+      }
+
+      .marker {
+        width:20px;
+        height:20px;
+      }
+
+ul {
+    list-style: none;
+}

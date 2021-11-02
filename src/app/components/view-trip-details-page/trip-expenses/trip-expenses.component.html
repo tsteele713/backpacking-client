@@ -1,17 +1,32 @@
 <div class="expenses-container">
-    <h4>Trip Expenses <a href=""><img class="add-expense" width="30" height="30" alt-test="Add Expense" src="assets/images/plus-sign.svg"/></a></h4>
+    <h4>Trip Expenses 
+        <div class="action-buttons">
+        <a href="" ><div class="receipt"><img class="add-receipt" width="15" height="15" alt-text="Upload Receipt" src="assets/images/camera.svg"/></div></a>
+        
+        <a href=""><div><img class="add-expense" width="30" height="30" alt-text="Add Expense" src="assets/images/plus-sign.svg"/></div></a>
+    </div>
+    </h4>
     <hr class="solid">
 
-    <div  *ngIf="expenses == undefined || expenses.length === 0" class="no-expenses">
+    <div  *ngIf="expenses.expenses == undefined || expenses.expenses.length === 0" class="no-expenses">
         <p>No expenses yet</p>
+    </div>
+
+    <div class="contatiner">
+        <div class="row" *ngFor="let expense of expenses.expenses">
+            <div class="col-sm">{{ expense.description}}</div>
+            <div class="col-sm">{{ expense.expenseCreator}}</div>
+            <div class="col-sm">{{ expense.type}}</div>
+            <div class="col-sm">{{ expense.amount}}</div>
+        </div>
     </div>
 
     <hr class="solid">
 
     <div class="expenses-summary">
         <div class="total-expenses">
-            <p>Total Personal Expenses: </p>
-            <p>Total Group Expenses: </p>
+            <p>Total Personal Expenses: ${{ expenses.personalTotal}}</p>
+            <p>Total Group Expenses: ${{ expenses.groupTotal}}</p>
         </div>
     </div>
 

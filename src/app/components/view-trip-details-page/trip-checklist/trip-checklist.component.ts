@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { ChecklistItem } from 'src/app/models/checklist-item.model';
 import { Trip } from 'src/app/models/trip.model';
 import { ChecklistService } from 'src/app/services/checklist.service';
@@ -18,5 +19,9 @@ export class TripChecklistComponent implements OnInit {
 
     ngOnInit() {
         this.checklistItems = this.checklistService.retrieveChecklistForTrip('12345');
+    }
+
+    changeSelection() {
+      
     }
 }

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TripExpenses } from 'src/app/models/expenses.model';
 import { Trip } from 'src/app/models/trip.model';
+import { ExpensesService } from 'src/app/services/expenses.service';
 
 @Component({
   selector: 'ts-trip-expenses',
@@ -9,10 +11,12 @@ import { Trip } from 'src/app/models/trip.model';
 export class TripExpensesComponent implements OnInit {
   
 
-    expenses!: any[];
+    expenses!: TripExpenses;
+
+    constructor(private expensesService: ExpensesService){}
 
     ngOnInit() {
-
+      this.expenses = this.expensesService.getExpenses()
     }
 
 }
