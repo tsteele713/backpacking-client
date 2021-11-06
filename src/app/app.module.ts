@@ -31,6 +31,7 @@ import { TripChecklistComponent } from './components/view-trip-details-page/trip
 import { TripExpensesComponent } from './components/view-trip-details-page/trip-expenses/trip-expenses.component';
 import { TripFriendsComponent } from './components/view-trip-details-page/trip-friends/trip-friends.component';
 import { TripItineraryComponent } from './components/view-trip-details-page/trip-itinerary/trip-itinerary.component';
+import { TripDescriptionComponent } from './components/view-trip-details-page/trip-overview/trip-description/trip-description.component';
 import { TripOverviewComponent } from './components/view-trip-details-page/trip-overview/trip-overview.component';
 import { ViewTripDetailsPageComponent } from './components/view-trip-details-page/view-trip-details-page.component';
 import { FutureTripsComponent } from './components/view-trips-page/future-trips/future-trips.component';
@@ -73,7 +74,8 @@ import { UserProfileService } from './services/user-profile.service';
     TripExpensesComponent,
     TripItineraryComponent,
     TripChecklistComponent,
-    EndTripComponent
+    EndTripComponent,
+    TripDescriptionComponent
 
   ],
   imports: [

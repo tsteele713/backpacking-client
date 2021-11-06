@@ -1,0 +1,19 @@
+<div class="description">
+    <h5>Description <img *ngIf="(editing | async) === false" (click)="toggleEditing()" class="edit-description" src="assets/images/edit.svg" height="15" width="15"></h5>
+    <div class="static-description" *ngIf="(editing | async) === false">
+        {{ description |async }}
+    </div>
+    <div>
+        <textarea class="form-control edit-description" *ngIf="(editing | async) === true" rows="4" cols="75" [(ngModel)]="editedDescription">
+            {{ description  }}
+        </textarea>
+
+        <div class="controls" *ngIf="(editing | async) === true">
+            
+            <button class="btn btn-primary" (click)="save()">Save</button>
+            <button class="btn btn-primary cancel" (click)="cancel()">Cancel</button>
+
+
+        </div>
+    </div>
+</div>
