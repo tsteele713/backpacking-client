@@ -1,7 +1,7 @@
 export interface Expenses {
-    seqId: string;
-    type: 'Personal' | 'Group';
-    amount: string;
+    seqId?: string;
+    type: 'Personal' | 'Group' | '';
+    amount: number | undefined;
     description: string;
     expenseCreator?: string;
 }

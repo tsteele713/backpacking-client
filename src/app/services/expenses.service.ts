@@ -20,39 +20,39 @@ export class ExpensesService {
                 {
                     seqId: '12345',
                     type: 'Group',
-                    amount: '34.50',
+                    amount: 34.50,
                     description: 'Fuel',
                     expenseCreator: 'Tyler Steele'
                 },
                 {
                     seqId: '12345',
                     type: 'Personal',
-                    amount: '10.50',
+                    amount: 10.50,
                     description: 'Monster'
                 },
                 {
                     seqId: '12345',
                     type: 'Personal',
-                    amount: '10.50',
+                    amount: 10.50,
                     description: 'Monster'
                 },
                 {
                     seqId: '12345',
                     type: 'Personal',
-                    amount: '10.50',
+                    amount: 10.50,
                     description: 'Monster'
                 },
                 {
                     seqId: '12345',
                     type: 'Group',
-                    amount: '10.50',
+                    amount: 10.50,
                     description: 'Monster',
                     expenseCreator: 'Branden Bellanca'
                 },
                 {
                     seqId: '12345',
                     type: 'Personal',
-                    amount: '10.50',
+                    amount: 10.50,
                     description: 'Monster'
                 },
             ]

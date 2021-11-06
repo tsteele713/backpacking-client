@@ -1,9 +1,9 @@
 <div class="expenses-container">
     <h4>Trip Expenses 
         <div class="action-buttons">
-        <a href="" ><div class="receipt"><img class="add-receipt" width="15" height="15" alt-text="Upload Receipt" src="assets/images/camera.svg"/></div></a>
+        <div  class="receipt"><img class="add-receipt" width="15" height="15" alt-text="Upload Receipt" src="assets/images/camera.svg"/></div>
         
-        <a href=""><div><img class="add-expense" width="30" height="30" alt-text="Add Expense" src="assets/images/plus-sign.svg"/></div></a>
+        <div (click)="openModal(template)" class="add-expense"><img class="add-expense" width="30" height="30" alt-text="Add Expense" src="assets/images/plus-sign.svg"/></div>
     </div>
     </h4>
     <hr class="solid">
@@ -31,3 +31,30 @@
     </div>
 
 </div>
+
+<ng-template #template>
+    <div class="modal-header">
+       <h4 class="modal-title pull-left">Add Expense</h4>
+       <button type="button" class="btn close pull-right x-button" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">×</span>
+       </button>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" placeholder="Expense Name" [(ngModel)]="expenseName"/>
+
+        <select class="form-select"  [(ngModel)]="expenseType">
+            <option value="" disabled selected>Select Expense Type</option>
+            <option value="Group">Group</option>
+            <option value="Personal">Personal</option>
+        </select>
+
+        <input type="number" class="form-control" placeholder="Cost ($)" [(ngModel)]="cost" step='0.01'/>
+            
+            
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary cancel" (click)="close()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="addExpense()">Add Expense</button>
+        
+    </div>
+ </ng-template>
