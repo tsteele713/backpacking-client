@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { thermometer } from 'ngx-bootstrap-icons';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { BehaviorSubject } from 'rxjs';
@@ -17,8 +17,11 @@ export class TripExpensesComponent implements OnInit {
     expenses!: TripExpenses;
     modalRef!: BsModalRef;
     displayTransportation!: BehaviorSubject<boolean>;
+    displayReceipts: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);;
     expenseName!: string;
     cost: number | undefined;
+    receiptPhoto!: string | ArrayBuffer | null;
+    receipts: any[] = [];
     expenseType!: 'Personal' | 'Group' | '';
     modalOptions: ModalOptions = {
       backdrop : 'static',
@@ -28,6 +31,7 @@ export class TripExpensesComponent implements OnInit {
     constructor(
       private expensesService: ExpensesService,
       private modalService: BsModalService,
+      private changeDetectorRef: ChangeDetectorRef
       ){}
 
     ngOnInit() {
@@ -57,6 +61,26 @@ export class TripExpensesComponent implements OnInit {
     this.expenses.expenses.push(expense);
     this.close();
     this.modalRef.hide();
+  }
+
+  removeReceipt(index: number) {
+    this.receipts.splice(index, 1);
+    this.displayReceipts.next(this.receipts);
+  }
+
+  readUrl(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = (event: ProgressEvent) => {
+        
+        this.receipts.push((<FileReader>event.target).result);
+        this.displayReceipts.next(this.receipts);
+        this.changeDetectorRef.detectChanges();
+      }
+  
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 }

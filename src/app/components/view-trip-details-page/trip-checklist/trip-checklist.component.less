@@ -1,5 +1,6 @@
 .checklist-container {
     margin:25px;
+    margin-bottom:50px;
    }
    
    .add-checklist {
@@ -12,8 +13,10 @@
    
     }
 
-    input[type=checkbox] {
-        display: none;
+
+
+    input[type=checkbox]:checked::before {
+      background-color:#04AA6D;
       }
       .label {
         // border: 1px solid #000;

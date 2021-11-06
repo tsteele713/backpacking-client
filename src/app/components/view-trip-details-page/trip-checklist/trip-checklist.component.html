@@ -10,7 +10,7 @@
         <ul>
             <li *ngFor="let checklistItem of checklistItems; let i = index">
                 <p>
-                    <label><input [attr.id]="'some-id-' + i" type="checkbox" (change)="changeSelection()"><span class="label" [attr.for]="'some-id-' + i"><i-bs name="check"></i-bs></span></label>
+                    <input [attr.id]="'some-id-' + i" type="checkbox" (change)="changeSelection()">
                     {{ checklistItem.item }}
                 </p>
             </li>

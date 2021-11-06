@@ -1,7 +1,9 @@
 <div class="expenses-container">
     <h4>Trip Expenses 
         <div class="action-buttons">
-        <div  class="receipt"><img class="add-receipt" width="15" height="15" alt-text="Upload Receipt" src="assets/images/camera.svg"/></div>
+        <div  class="receipt"><label for="receipt-upload" title="Upload photo of receipt for expense"><img class="add-receipt" width="15" height="15" alt-text="Upload Receipt" src="assets/images/camera.svg"/></label></div>
+
+        <input id="receipt-upload" type="file" (change)="readUrl($event)"/>
         
         <div (click)="openModal(template)" class="add-expense"><img class="add-expense" width="30" height="30" alt-text="Add Expense" src="assets/images/plus-sign.svg"/></div>
     </div>
@@ -11,6 +13,7 @@
     <div  *ngIf="expenses.expenses == undefined || expenses.expenses.length === 0" class="no-expenses">
         <p>No expenses yet</p>
     </div>
+
 
     <div class="contatiner">
         <div class="row" *ngFor="let expense of expenses.expenses">
@@ -31,6 +34,55 @@
     </div>
 
 </div>
+
+<div class="container-fluid">
+    <div *ngFor="let receipt of (displayReceipts | async); let i = index">
+        <div class="row" *ngIf="i % 4 === 0">
+            <div class="receipt-image col-sm-2" *ngIf="receipt 
+            && (displayReceipts | async) !== null 
+            && (displayReceipts | async)!.length > 0 
+            && (displayReceipts | async)![i]">
+            
+                <div class="delete-receipt" (click)="removeReceipt(i)">x</div>
+                <div class="img">
+                    <img [src]="(displayReceipts | async)![i]" *ngIf="(displayReceipts | async)![i]" height="75" width="75"/>
+                </div>
+            </div>
+
+            <div class="receipt-image col-sm-2" *ngIf="receipt 
+            && (displayReceipts | async) !== null 
+            && (displayReceipts | async)!.length > 0 
+            && (displayReceipts | async)![i + 1]">
+                <div class="delete-receipt" (click)="removeReceipt(i + 1)">x</div>
+                <div class="img">
+                <img [src]="(displayReceipts | async)![i + 1]" *ngIf="(displayReceipts | async)![i + 1]" height="75" width="75"/>
+                </div>
+            </div>
+            <div class="receipt-image col-sm-2" *ngIf="receipt 
+            && (displayReceipts | async) !== null 
+            && (displayReceipts | async)!.length > 0 
+            && (displayReceipts | async)![i + 2]">
+                <div class="delete-receipt" (click)="removeReceipt(i + 2)">x</div>
+                <div class="img">
+                <img [src]="(displayReceipts | async)![i + 2]" *ngIf="(displayReceipts | async)![i + 2]" height="75" width="75"/>
+                </div>
+            </div>
+            <div class="receipt-image col-sm-2" *ngIf="receipt 
+            && (displayReceipts | async) !== null 
+            && (displayReceipts | async)!.length > 0 
+            && (displayReceipts | async)![i + 3]">
+                <div class="delete-receipt" (click)="removeReceipt(i + 3)">x</div>
+                <div class="img">
+                <img [src]="(displayReceipts | async)![i + 3]" *ngIf="(displayReceipts | async)![i + 3]" height="75" width="75"/>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+
 
 <ng-template #template>
     <div class="modal-header">
