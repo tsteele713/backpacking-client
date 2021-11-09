@@ -1,0 +1,62 @@
+<div class="upload-images" *ngIf="(displayPhotos | async)!.length === 0">
+    <label for="photo-upload" class="photo-label" title="Upload photos from your trip">
+        <img src="assets/images/camera.svg" height="150" width="150"/>
+        <p>Upload an image</p>
+    </label>
+</div>
+
+<input id="photo-upload" type="file" (change)="readUrl($event)" multiple/>
+
+<div class="container-fluid">
+        <div class="row" >
+            <div class="col-lg-1 receipt-image" *ngFor="let receipt of (displayPhotos | async); let i = index">
+            
+                <!-- <div class="delete-receipt" (click)="removeReceipt(i)">x</div> -->
+                <div class="img" (click)="openModal(template, i)"  *ngIf="receipt 
+                && (displayPhotos | async) !== null 
+                && (displayPhotos | async)!.length > 0 
+                && (displayPhotos | async)![i]">
+                    <img class="thumbnail" [src]="(displayPhotos | async)![i]" *ngIf="(displayPhotos | async)![i]" height="100" width="100"/>
+                </div>
+            </div>
+           
+        </div>
+
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+       <h4 class="modal-title pull-left">Photo</h4>
+       <button type="button" class="btn close pull-right x-button" aria-label="Close" (click)="close()" (keydown.esc)="close()">
+          <span aria-hidden="true">×</span>
+       </button>
+    </div>
+    <div class="modal-body">
+        <div class="image-actions">
+            <div class="download-image" >
+                <img src="assets/images/download.svg" height="25" width="25"/>
+            </div>
+            <div class="delete-image" (click)="deletePhoto(startingIndex)">
+                <img src="assets/images/trash.svg"  height="25" width="25"/>
+            </div>
+
+        </div>
+
+        <div class="carousel-container">
+            <!-- Items per slide is a hack given by the actual bootstrap developers...
+                its gross, but it prevents the first image from being superimposed onto the modal with every other picture -->
+            <carousel (activeSlideIndex)="log($event)" [showIndicators]="true" [interval]="0" [startFromIndex]="(startingIndex | async)" [itemsPerSlide]="1.000001">
+                
+                <slide *ngFor="let photo of (displayPhotos | async); let i = index" [active]="(startingIndex | async) === i">
+                    <img class="full-size" [src]="photo" alt="image slide">
+                </slide>
+            </carousel>
+        </div>
+        
+            
+    </div>
+    <div class="modal-footer">
+
+        
+    </div>
+ </ng-template>

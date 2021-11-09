@@ -1,0 +1,83 @@
+.upload-images {
+    color: #898989;
+    text-align: center;
+}
+
+#photo-upload {
+    display: none;
+}
+
+.photo-label {
+    cursor:pointer;
+}
+
+.receipt-image {
+    height:100px;
+    margin: 15px;
+    cursor:pointer;
+    display: flex;
+}
+
+.delete-receipt {
+    float: right;
+    color: darkgray;
+    cursor: pointer;
+    
+    img {
+            display:block;
+            margin:auto;
+    }
+}
+
+.thumbnail {
+
+    border-radius: 15px;
+    height:100px;
+    width:100px;
+    cursor:pointer;
+}
+
+.download-image,
+.delete-image,
+.img {
+    cursor:pointer;
+}
+.full-size {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+.view-image-toolbar {
+    height:50px;
+    border:1px solid black;
+}
+
+::ng-deep .modal-dialog {
+    max-width:1000px;
+}
+
+.image-actions {
+    float: right;
+    margin-bottom: 15px;
+    display: flex;
+
+    .delete-image {
+        color: darkred
+    }
+
+    .download-image {
+        margin-right: 20px;
+    }
+}
+
+.modal-body {
+    margin: 20px;
+}
+
+.carousel-container {
+    padding-top:50px;
+}

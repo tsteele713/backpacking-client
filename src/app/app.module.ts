@@ -10,6 +10,7 @@ import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowseMarketplacePageComponent } from './components/browse-marketplace-page/browse-marketplace-page.component';
+import { CarouselModule } from './components/carousel/carousel.module';
 import { CreateListingPageComponent } from './components/create-listing-page/create-listing-page.component';
 import { CreateTripComponent } from './components/create-trip/create-trip.component';
 import { DestinationComponent } from './components/create-trip/destination/destination.component';
@@ -24,6 +25,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { ViewImageComponent } from './components/view-image/view-image.component';
 import { ProfilePictureComponent } from './components/view-profile-page/profile-picture/profile-picture.component';
 import { ViewProfilePageComponent } from './components/view-profile-page/view-profile-page.component';
 import { EndTripComponent } from './components/view-trip-details-page/end-trip/end-trip.component';
@@ -75,7 +77,8 @@ import { UserProfileService } from './services/user-profile.service';
     TripItineraryComponent,
     TripChecklistComponent,
     EndTripComponent,
-    TripDescriptionComponent
+    TripDescriptionComponent,
+    ViewImageComponent
 
   ],
   imports: [
@@ -87,7 +90,8 @@ import { UserProfileService } from './services/user-profile.service';
     HttpClientModule,
     NgxBootstrapIconsModule.pick(allIcons),
     ModalModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    CarouselModule
     
   ],
   providers: [

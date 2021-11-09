@@ -3,7 +3,7 @@
         <div class="action-buttons">
         <div  class="receipt"><label for="receipt-upload" title="Upload photo of receipt for expense"><img class="add-receipt" width="15" height="15" alt-text="Upload Receipt" src="assets/images/camera.svg"/></label></div>
 
-        <input id="receipt-upload" type="file" (change)="readUrl($event)"/>
+        <input id="receipt-upload" type="file" (change)="readUrl($event)" multiple/>
         
         <div (click)="openModal(template)" class="add-expense"><img class="add-expense" width="30" height="30" alt-text="Add Expense" src="assets/images/plus-sign.svg"/></div>
     </div>

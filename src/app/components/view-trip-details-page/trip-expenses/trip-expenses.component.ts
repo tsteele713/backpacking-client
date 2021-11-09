@@ -69,17 +69,22 @@ export class TripExpensesComponent implements OnInit {
   }
 
   readUrl(event:any) {
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+    if (event.target.files ) {
+      let files: FileList = event.target.files;
+      for(let i = 0; i < files.length; i = i+1) {
+        let element = files[i];
+        var reader = new FileReader();
   
-      reader.onload = (event: ProgressEvent) => {
-        
-        this.receipts.push((<FileReader>event.target).result);
-        this.displayReceipts.next(this.receipts);
-        this.changeDetectorRef.detectChanges();
+        reader.onload = (event: ProgressEvent) => {
+          
+          this.receipts.push((<FileReader>event.target).result);
+          this.displayReceipts.next(this.receipts);
+          this.changeDetectorRef.detectChanges();
+        }
+    
+        reader.readAsDataURL(element);
       }
-  
-      reader.readAsDataURL(event.target.files[0]);
+
     }
   }
 
